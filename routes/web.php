@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\ShippingServiceController;
 use App\Http\Controllers\Admin\StockController;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\ProductCatalogController;
 
 Route::get('/', [ProductCatalogController::class, 'index'])->name('shop.index');
@@ -19,6 +20,13 @@ Route::middleware('guest')->group(function () {
 });
 
 Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth')->name('logout');
+
+Route::middleware(['auth', 'role:customer'])->group(function () {
+    Route::get('/keranjang', [CartController::class, 'index'])->name('cart.index');
+    Route::post('/keranjang/{product}', [CartController::class, 'store'])->name('cart.store');
+    Route::patch('/keranjang/{product}', [CartController::class, 'update'])->name('cart.update');
+    Route::delete('/keranjang/{product}', [CartController::class, 'destroy'])->name('cart.destroy');
+});
 
 // Route untuk Admin
 Route::prefix('admin')->name('admin.')->middleware(['auth', 'role:admin'])->group(function () {
