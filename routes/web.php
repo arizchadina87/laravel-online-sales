@@ -7,7 +7,7 @@ use App\Http\Controllers\Admin\ProductController;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('shop.index');
 
 Route::middleware('guest')->group(function () {
     Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
