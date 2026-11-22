@@ -1,13 +1,6 @@
-<x-app-layout>
-    <x-slot name="header">
-        <div class="flex justify-between items-center">
-            <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                {{ __('Kelola Produk') }}
-            </h2>
-            <a href="{{ route('admin.products.create') }}" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 text-sm">Tambah Produk</a>
-        </div>
-    </x-slot>
-
+@extends('layouts.admin')
+@section('title','Produk')
+@section('content')
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             @if (session('success'))
@@ -17,6 +10,14 @@
             @endif
 
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 text-gray-900">
+                <!-- Header & Tombol Tambah di Kanan Atas -->
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-lg font-semibold text-gray-800">Daftar Produk</h2>
+                    <a href="{{ route('admin.products.create') }}" class="bg-emerald-800 text-white px-4 py-2 rounded-md hover:bg-emerald-700 font-medium text-sm shadow-sm transition">
+                        + Tambah Produk
+                    </a>
+                </div>
+
                 <!-- Form Pencarian -->
                 <form method="GET" action="{{ route('admin.products.index') }}" class="mb-6 flex gap-4">
                     <input type="text" name="q" value="{{ request('q') }}" placeholder="Cari nama atau SKU..." class="border-gray-300 rounded-md shadow-sm w-1/3">
@@ -84,4 +85,4 @@
             </div>
         </div>
     </div>
-</x-app-layout>
+@endsection

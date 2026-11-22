@@ -35,7 +35,7 @@
     <a class="btn" href="{{ route('register') }}">Daftar</a>
 @endauth
 </nav></header>
-<main class="container">@include('flash') @yield('content')</main>
+<main class="container">@include('layouts.flash') @yield('content')</main>
 <footer class="container footer"><strong>ruangbelanja.</strong>
 <span>Proyek praktikum Laravel · Admin & Pelanggan</span>
 <span>Belanja dengan informasi yang jelas.</span></footer>
