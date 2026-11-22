@@ -1,4 +1,4 @@
-@extends('layout.app')
+@extends('layouts.app')
 @section('title',$product->name)
 @section('content')<div class="card">
 <div class="checkout-layout">@if($product->image)<img class="thumb" style="height:340px"
