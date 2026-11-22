@@ -1,4 +1,4 @@
-@extends('layout.app')
+@extends('layouts.app')
 @section('title','Pilihan untuk keseharian')
 @section('content')
 <section class="hero"><div><span class="eyebrow">PILIHAN UNTUK KESEHARIAN</span><h1>Hal kecil yang bikin<br>harimu lebih nyaman.</h1><p>Temukan kebutuhan rumah, aksesori, dan elektronik pilihan. Harga jelas, stok tersedia, siap menemani aktivitasmu.</p><div class="hero-bottom"><span>Informasi stok langsung</span><span>Pilihan ekspedisi</span><span>Riwayat pesanan lengkap</span></div></div><div class="hero-art" aria-hidden="true">⌨ ◉</div></section>
